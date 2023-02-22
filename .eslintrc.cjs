@@ -1,0 +1,53 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    jest: true,
+    node: true,
+  },
+  settings: {
+    react: {
+      version: "18.*.*",
+    },
+  },
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "prettier",
+    "@limegrass/import-alias",
+    "import",
+    "jsx-a11y",
+  ],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+  ],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  rules: {
+    "import/order": "error",
+    "arrow-body-style": ["error", "as-needed"],
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error",
+    "@limegrass/import-alias/import-alias": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "react/no-array-index-key": "error",
+    "react/prop-types": "off",
+    "react/require-default-props": "off",
+    "react/button-has-type": "error",
+    "react/display-name": "warn",
+    "react/jsx-no-bind": "error",
+  },
+};

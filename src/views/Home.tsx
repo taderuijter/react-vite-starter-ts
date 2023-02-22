@@ -5,9 +5,6 @@ import { Helmet } from "react-helmet";
 import Layout from "@/components/Layout";
 
 function Home() {
-
-  console.log('Cool! You are using React Vite Starter (JS Build)');
-
   return (
     <>
       <Helmet>
