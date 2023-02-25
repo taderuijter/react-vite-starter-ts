@@ -17,6 +17,7 @@ module.exports = {
     "@limegrass/import-alias",
     "import",
     "jsx-a11y",
+    "jest",
   ],
   extends: [
     "eslint:recommended",
@@ -49,5 +50,10 @@ module.exports = {
     "react/button-has-type": "error",
     "react/display-name": "warn",
     "react/jsx-no-bind": "error",
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
   },
 };
