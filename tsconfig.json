@@ -16,7 +16,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["node", "jest", "@testing-library/jest-dom", "@emotion/jest"],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "typeRoots": [
       "src/@types"
     ],
