@@ -16,10 +16,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["node", "jest", "@testing-library/jest-dom"],
-    "typeRoots": [
-      "src/@types"
-    ],
+    "types": ["cypress", "node"],
     "paths": {
       "@/*": ["./src/*"]
     },

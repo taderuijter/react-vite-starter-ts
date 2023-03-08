@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 
 // Import components
 import Layout from "@/components/Layout";
+import Stepper from "@/components/Stepper";
 
 function Home() {
   return (
@@ -13,7 +14,10 @@ function Home() {
       </Helmet>
 
       <Layout>
-        <h1 className="text-3xl font-bold underline">Homepage</h1>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold underline">Homepage</h1>
+          <Stepper />
+        </div>
       </Layout>
     </>
   );
