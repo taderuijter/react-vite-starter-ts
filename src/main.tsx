@@ -6,9 +6,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "@/assets/styles/index.css";
 
 // Router Views
-import Home from "@/views/Home";
-import About from "@/views/About";
-import NotFound from "@/views/NotFound";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import NotFound from "@/pages/NotFound";
 
 // React Router
 const router = createBrowserRouter([
