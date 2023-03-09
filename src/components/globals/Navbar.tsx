@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 
+import Button from "@/components/atoms/Button";
 import LanguageSwitcher from "@/components/atoms/LanguageSwitcher";
 
 function Navbar(): JSX.Element {
@@ -49,15 +50,7 @@ function Navbar(): JSX.Element {
 
           <nav className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-4">
             <LanguageSwitcher />
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-2 text-base font-bold leading-7 text-white transition-all duration-200 bg-gray-900 border border-transparent rounded-xl hover:bg-gray-600 font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-              role="button"
-              aria-label="GitHub repository">
-              Check on GitHub
-            </a>
+            <Button />
           </nav>
         </div>
 
@@ -73,15 +66,8 @@ function Navbar(): JSX.Element {
                   About
                 </Link>
 
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-2 text-base font-bold leading-7 text-white transition-all duration-200 bg-gray-900 border border-transparent rounded-xl hover:bg-gray-600 font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                  role="button"
-                  aria-label="GitHub repository">
-                  Check on GitHub
-                </a>
+                <LanguageSwitcher />
+                <Button />
               </div>
             </div>
           </nav>

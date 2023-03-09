@@ -16,7 +16,7 @@ function LanguageSwitcher(): JSX.Element {
     <div className="relative">
       <button
         type="button"
-        className="inline-flex justify-center items-center space-x-2 border border-gray-300 rounded-md px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        className="inline-flex justify-center items-center space-x-2 border border-gray-300 rounded-xl px-4 py-3 bg-white text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         onClick={toggleMenu}
         aria-haspopup="true"
         aria-expanded={isOpen ? "true" : "false"}
