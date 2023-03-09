@@ -1,0 +1,14 @@
+{
+  "title": "Welcome to the React Boilerplate",
+  "description": "Our React boilerplate, built with Vite and TypeScript, is the perfect starting point for your next project. With e2e and unit testing already set up, you can get started building robust and error-free applications right away. Highly customizable and easy to use, our boilerplate is the ideal choice for developers of all skill levels.",
+  "components": {
+    "languageSwitcher": {
+      "label": "Language",
+      "currentLanguage": "English",
+      "languages": {
+        "en": "English",
+        "nl": "Nederlands"
+      }
+    }
+  }
+}

@@ -5,7 +5,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // Global styles
 import "@/assets/styles/index.css";
 
-// Router Views
+// import i18n (needs to be bundled ;))
+import "@/plugins/i18n";
+
+// Router pages
 import TagManager from "react-gtm-module";
 import Home from "@/pages/Home";
 import About from "@/pages/About";

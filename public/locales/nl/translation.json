@@ -1,0 +1,14 @@
+{
+  "title": "Welkom bij de React Boilerplate",
+  "description": "Onze React-boilerplate, gebouwd met Vite en TypeScript, is het perfecte startpunt voor uw volgende project. Met e2e- en unit-testing al ingesteld, kunt u meteen robuuste en foutloze applicaties bouwen. Zeer aanpasbaar en gemakkelijk te gebruiken, onze boilerplate is de ideale keuze voor ontwikkelaars van alle niveaus.",
+  "components": {
+  "languageSwitcher": {
+    "label": "Talen",
+    "currentLanguage": "Nederlands",
+      "languages": {
+        "en": "Engels",
+        "nl": "Nederlands"
+      }
+    }
+  }
+}

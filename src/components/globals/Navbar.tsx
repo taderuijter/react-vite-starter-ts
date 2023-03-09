@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 
+import LanguageSwitcher from "@/components/atoms/LanguageSwitcher";
+
 function Navbar(): JSX.Element {
   const [expanded, setExpanded] = useState<boolean>(false);
 
@@ -45,7 +47,8 @@ function Navbar(): JSX.Element {
             </Link>
           </nav>
 
-          <nav className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-10">
+          <nav className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-4">
+            <LanguageSwitcher />
             <a
               href="https://github.com"
               target="_blank"

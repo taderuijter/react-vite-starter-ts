@@ -2,7 +2,7 @@
 import { Helmet } from "react-helmet";
 
 // Import components
-import Layout from "@/components/Layout";
+import Layout from "@/components/globals/Layout";
 
 function About() {
   return (
