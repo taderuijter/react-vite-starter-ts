@@ -7,7 +7,7 @@ import Stepper from "@/components/Stepper";
 
 function Home() {
   return (
-    <>
+    <div id="home">
       <Helmet>
         <meta charSet="utf-8" />
         <title>Homepage - React Vite Starter (JS Build)</title>
@@ -19,7 +19,7 @@ function Home() {
           <Stepper />
         </div>
       </Layout>
-    </>
+    </div>
   );
 }
 
