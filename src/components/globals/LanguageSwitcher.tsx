@@ -61,7 +61,7 @@ const LanguageSwitcher: React.FC = () => {
           <div className="py-1">
             <div className="flex items-center px-4 py-2">
               <label htmlFor="language-search" className="sr-only">
-                Search for a language
+                {t("components.languageSwitcher.search.placeholder")}
               </label>
               <div className="relative">
                 <MagnifyingGlassIcon className="absolute top-0 left-0 w-[20px] h-[20px] ml-2 mt-2 text-gray-400" />
@@ -70,7 +70,9 @@ const LanguageSwitcher: React.FC = () => {
                   name="language-search"
                   id="language-search"
                   className="focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md pl-8 transition-all duration-200"
-                  placeholder="Search for a language"
+                  placeholder={t(
+                    "components.languageSwitcher.search.placeholder",
+                  )?.toString()}
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
                 />

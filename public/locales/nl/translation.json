@@ -12,6 +12,9 @@
       "languages": {
         "en": "Engels",
         "nl": "Nederlands"
+      },
+      "search": {
+        "placeholder": "Zoek naar een taal"
       }
     }
   },
