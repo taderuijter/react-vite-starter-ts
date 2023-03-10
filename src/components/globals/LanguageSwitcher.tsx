@@ -43,7 +43,7 @@ const LanguageSwitcher: React.FC = () => {
       <div>
         <button
           type="button"
-          className="flex rounded-md border px-4 py-2 space-x-2 border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+          className="flex rounded-md border px-4 py-2 space-x-2 border-gray-300 bg-white text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-primary transition-all duration-200"
           id="language-menu"
           aria-expanded="true"
           aria-haspopup="true"
@@ -69,7 +69,7 @@ const LanguageSwitcher: React.FC = () => {
                   type="text"
                   name="language-search"
                   id="language-search"
-                  className="focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md pl-8"
+                  className="focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md pl-8 transition-all duration-200"
                   placeholder="Search for a language"
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
@@ -85,7 +85,7 @@ const LanguageSwitcher: React.FC = () => {
                   i18n.language === lang.value
                     ? "bg-gray-100 text-gray-900"
                     : "text-gray-700"
-                } block px-4 py-2 text-sm w-full text-left`}
+                } block px-4 py-2 text-sm w-full text-left focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200`}
                 onClick={() => setLanguage(lang.value)}>
                 {lang.label}
               </button>
