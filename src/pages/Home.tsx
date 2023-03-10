@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 // Import components
 import Layout from "@/components/layout/Layout";
+import Container from "@/components/layout/Container";
 
 function Home() {
   const { t } = useTranslation();
@@ -12,14 +13,18 @@ function Home() {
     <div id="home">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Homepage - React Vite Starter (JS Build)</title>
+        <title>React Boilerplate - vite, typescript, cypress & i18n</title>
       </Helmet>
 
       <Layout>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8 space-y-4">
-          <h1>{t("title")}</h1>
-          <p>{t("description")}</p>
-        </div>
+        <Container className="mt-8">
+          <h1 className="text-4xl font-bold text-gray-900">
+            {t("pages.home.title")}
+          </h1>
+          <p className="mt-4 text-lg text-gray-500">
+            {t("pages.home.content")}
+          </p>
+        </Container>
       </Layout>
     </div>
   );
