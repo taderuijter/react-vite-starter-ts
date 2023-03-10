@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 
 // Import components
-import Layout from "@/components/globals/Layout";
+import Layout from "@/components/layout/Layout";
 
 function Home() {
   const { t } = useTranslation();

@@ -17,6 +17,7 @@
     "test": "cypress run --component --browser chrome"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
     "flowbite": "^1.6.3",
     "flowbite-react": "^0.4.2",

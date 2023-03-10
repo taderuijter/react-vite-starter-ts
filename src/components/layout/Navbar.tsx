@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 
-import Button from "@/components/atoms/Button";
-import LanguageSwitcher from "@/components/atoms/LanguageSwitcher";
+import Button from "@/components/globals/Button";
+import LanguageSwitcher from "@/components/globals/LanguageSwitcher";
 
 function Navbar(): JSX.Element {
   const [expanded, setExpanded] = useState<boolean>(false);
