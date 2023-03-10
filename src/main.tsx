@@ -14,6 +14,9 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import NotFound from "@/pages/NotFound";
 
+// Store
+import AppProvider from "@/store/AppProvider";
+
 // Google tag manager
 const tagManagerArgs = {
   gtmId: "GTM-N829CWR",
@@ -38,5 +41,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <RouterProvider router={router} />,
+  <AppProvider>
+    <RouterProvider router={router} />
+  </AppProvider>,
 );

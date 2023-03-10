@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 // Import components
 import Layout from "@/components/layout/Layout";
 import Container from "@/components/layout/Container";
+import Stepper from "@/components/organisms/Stepper";
 
 function Home() {
   const { t } = useTranslation();
@@ -24,6 +25,7 @@ function Home() {
           <p className="mt-4 text-lg text-gray-500">
             {t("pages.home.content")}
           </p>
+          <Stepper />
         </Container>
       </Layout>
     </div>

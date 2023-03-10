@@ -8,9 +8,9 @@
     },
     "languageSwitcher": {
       "label": "Taal",
-      "currentLanguage": "Engels",
+      "currentLanguage": "Nederlands",
       "languages": {
-        "en": "Engels",
+        "en": "English",
         "nl": "Nederlands"
       },
       "search": {

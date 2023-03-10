@@ -1,30 +1,25 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { CounterContext } from "@/store/CounterContext";
 
 function Stepper(): JSX.Element {
-  const [count, setCount] = useState<number>(0);
-
-  const handleDecrement = (): void => {
-    setCount((prevCount: number) => prevCount - 1);
-  };
-
-  const handleIncrement = (): void => {
-    setCount((prevCount: number) => prevCount + 1);
-  };
+  const { state, dispatch } = useContext(CounterContext);
 
   return (
     <div className="my-4">
       <button
         className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-l"
         data-cy="decrement"
-        onClick={handleDecrement}
+        onClick={() => dispatch({ type: "decrement" })}
         type="button">
         -
       </button>
-      <span className="bg-gray-200 px-4 py-2 font-bold text-xl">{count}</span>
+      <span className="bg-gray-200 px-4 py-2 font-bold text-xl">
+        {state.count}
+      </span>
       <button
         className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r"
         data-cy="increment"
-        onClick={handleIncrement}
+        onClick={() => dispatch({ type: "increment" })}
         type="button">
         +
       </button>

@@ -72,7 +72,7 @@ const LanguageSwitcher: React.FC = () => {
                   className="focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md pl-8 transition-all duration-200"
                   placeholder={t(
                     "components.languageSwitcher.search.placeholder",
-                  )?.toString()}
+                  ).toString()}
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
                 />
