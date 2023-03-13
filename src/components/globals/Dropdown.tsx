@@ -1,14 +1,24 @@
+// Import React libraries
 import { useState, useRef } from "react";
-import { useTranslation } from "react-i18next";
 import {
   MagnifyingGlassIcon,
   ChevronDownIcon,
   ChevronUpIcon,
 } from "@heroicons/react/20/solid";
+
+// Custom hooks
 import { useClickOutside } from "@/hooks/useClickOutside";
 
-const LanguageSwitcher: React.FC = () => {
-  const { t, i18n } = useTranslation();
+// Type checking for the dropdown
+type PropTypes = {
+  search: boolean;
+  options: { label: string; value: string }[];
+  onChange: (value: string) => void;
+};
+
+// Component
+const Dropdown = ({ search, options, onChange }: PropTypes) => {
+  const [label, setLabel] = useState(options[0].label);
   const [isOpen, setIsOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const ref = useRef<HTMLDivElement>(null);
@@ -20,22 +30,18 @@ const LanguageSwitcher: React.FC = () => {
   useClickOutside(ref, closeMenu);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prevOpen) => !prevOpen);
   };
 
-  const setLanguage = (lang: string) => {
-    i18n.changeLanguage(lang);
+  const dropdownHandler = (item: { label: string; value: string }) => {
+    setLabel(item.label);
+    onChange(item.value);
     setIsOpen(false);
     setSearchValue("");
   };
 
-  const languageList = [
-    { label: t("components.languageSwitcher.languages.en"), value: "en" },
-    { label: t("components.languageSwitcher.languages.nl"), value: "nl" },
-  ];
-
-  const filteredList = languageList.filter((lang) =>
-    lang.label.toLowerCase().includes(searchValue.toLowerCase()),
+  const filteredDropdown = options.filter((item) =>
+    item.label.toLowerCase().includes(searchValue.toLowerCase()),
   );
 
   return (
@@ -48,7 +54,7 @@ const LanguageSwitcher: React.FC = () => {
           aria-expanded="true"
           aria-haspopup="true"
           onClick={toggleMenu}>
-          <div>{t("components.languageSwitcher.currentLanguage")}</div>
+          <div>{label}</div>
           {isOpen ? (
             <ChevronUpIcon className="w-[20px] h-[20px]" />
           ) : (
@@ -59,37 +65,37 @@ const LanguageSwitcher: React.FC = () => {
       {isOpen && (
         <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
-            <div className="flex items-center px-4 py-2">
-              <label htmlFor="language-search" className="sr-only">
-                {t("components.languageSwitcher.search.placeholder")}
-              </label>
-              <div className="relative">
-                <MagnifyingGlassIcon className="absolute top-0 left-0 w-[20px] h-[20px] ml-2 mt-2 text-gray-400" />
-                <input
-                  type="text"
-                  name="language-search"
-                  id="language-search"
-                  className="focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md pl-8 transition-all duration-200"
-                  placeholder={t(
-                    "components.languageSwitcher.search.placeholder",
-                  ).toString()}
-                  value={searchValue}
-                  onChange={(e) => setSearchValue(e.target.value)}
-                />
+            {search && (
+              <div className="flex items-center px-4 py-2">
+                <label htmlFor="language-search" className="sr-only">
+                  Search
+                </label>
+                <div className="relative">
+                  <MagnifyingGlassIcon className="absolute top-0 left-0 w-[20px] h-[20px] ml-2 mt-2 text-gray-400" />
+                  <input
+                    type="text"
+                    name="language-search"
+                    id="language-search"
+                    className="focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md pl-8 transition-all duration-200"
+                    placeholder="Search"
+                    value={searchValue}
+                    onChange={(e) => setSearchValue(e.target.value)}
+                  />
+                </div>
               </div>
-            </div>
+            )}
 
-            {filteredList.map((lang) => (
+            {filteredDropdown.map((item) => (
               <button
                 type="button"
-                key={lang.value}
+                key={item.value}
                 className={`${
-                  i18n.language === lang.value
+                  label === item.label
                     ? "bg-gray-100 text-gray-900"
                     : "text-gray-700"
                 } block px-4 py-2 text-sm w-full text-left focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200`}
-                onClick={() => setLanguage(lang.value)}>
-                {lang.label}
+                onClick={() => dropdownHandler(item)}>
+                {item.label}
               </button>
             ))}
           </div>
@@ -99,4 +105,4 @@ const LanguageSwitcher: React.FC = () => {
   );
 };
 
-export default LanguageSwitcher;
+export default Dropdown;

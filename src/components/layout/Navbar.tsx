@@ -1,19 +1,25 @@
 // Import React Libraries
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 import { useTranslation } from "react-i18next";
+import { LanguageContext } from "@/store/LanguageContext";
 
 // Import components
 import Button from "@/components/globals/Button";
-import LanguageSwitcher from "@/components/globals/LanguageSwitcher";
+import Dropdown from "@/components/globals/Dropdown";
 
 function Navbar(): JSX.Element {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState<boolean>(false);
+  const languages = useContext(LanguageContext);
 
   const toggleExpanded = (): void => {
     setExpanded(!expanded);
+  };
+
+  const changeLanguage = (value: string): void => {
+    i18n.changeLanguage(value);
   };
 
   return (
@@ -60,7 +66,13 @@ function Navbar(): JSX.Element {
           </nav>
 
           <nav className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-4">
-            <LanguageSwitcher />
+            <Dropdown
+              search={true}
+              options={languages}
+              onChange={(value) => {
+                changeLanguage(value);
+              }}
+            />
             <Button />
           </nav>
         </div>
@@ -84,7 +96,13 @@ function Navbar(): JSX.Element {
                   {t("components.navbar.links.about")}
                 </Link>
 
-                <LanguageSwitcher />
+                <Dropdown
+                  search={false}
+                  options={languages}
+                  onChange={(value) => {
+                    changeLanguage(value);
+                  }}
+                />
                 <Button />
               </div>
             </div>
