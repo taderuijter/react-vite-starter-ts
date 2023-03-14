@@ -9,7 +9,7 @@ import { LanguageContext } from "@/store/LanguageContext";
 import Button from "@/components/globals/Button";
 import Dropdown from "@/components/globals/Dropdown";
 
-function Navbar(): JSX.Element {
+const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState<boolean>(false);
   const languages = useContext(LanguageContext);
@@ -48,21 +48,19 @@ function Navbar(): JSX.Element {
             </button>
           </div>
 
-          <nav className="hidden lg:items-center lg:ml-16 lg:mr-auto lg:space-x-16 lg:flex">
-            <Link
-              to="/"
-              title="Home"
-              aria-label="Home"
-              className="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">
-              {t("components.navbar.links.home")}
-            </Link>
-            <Link
-              to="/about"
-              title="About"
-              aria-label="About"
-              className="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">
-              {t("components.navbar.links.about")}
-            </Link>
+          <nav className="hidden lg:items-center lg:ml-16 lg:mr-auto lg:space-x-4 lg:flex">
+            <Button
+              type="internal-link"
+              text={t("components.navbar.links.home")}
+              href="/"
+              styling="transparent"
+            />
+            <Button
+              type="internal-link"
+              text={t("components.navbar.links.about")}
+              href="/about"
+              styling="transparent"
+            />
           </nav>
 
           <nav className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-4">
@@ -73,7 +71,12 @@ function Navbar(): JSX.Element {
                 changeLanguage(value);
               }}
             />
-            <Button />
+            <Button
+              type="external-link"
+              text="Check on Github"
+              href="https://www.github.com"
+              styling="solid"
+            />
           </nav>
         </div>
 
@@ -81,20 +84,18 @@ function Navbar(): JSX.Element {
           <nav>
             <div className="px-1 py-8">
               <div className="grid gap-y-7">
-                <Link
-                  to="/"
-                  title="Home"
-                  aria-label="Home"
-                  className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">
-                  {t("components.navbar.links.home")}
-                </Link>
-                <Link
-                  to="/about"
-                  title="About"
-                  aria-label="About"
-                  className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded-xl hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">
-                  {t("components.navbar.links.about")}
-                </Link>
+                <Button
+                  type="internal-link"
+                  text={t("components.navbar.links.home")}
+                  href="/"
+                  styling="transparent"
+                />
+                <Button
+                  type="internal-link"
+                  text={t("components.navbar.links.about")}
+                  href="/about"
+                  styling="transparent"
+                />
 
                 <Dropdown
                   search={false}
@@ -103,7 +104,12 @@ function Navbar(): JSX.Element {
                     changeLanguage(value);
                   }}
                 />
-                <Button />
+                <Button
+                  type="external-link"
+                  text="Check on Github"
+                  href="https://www.github.com"
+                  styling="solid"
+                />
               </div>
             </div>
           </nav>
@@ -111,5 +117,5 @@ function Navbar(): JSX.Element {
       </div>
     </header>
   );
-}
+};
 export default Navbar;

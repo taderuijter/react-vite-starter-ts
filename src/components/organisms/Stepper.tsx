@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CounterContext } from "@/store/CounterContext";
 
-function Stepper(): JSX.Element {
+const Stepper = () => {
   const { state, dispatch } = useContext(CounterContext);
 
   return (
@@ -25,6 +25,6 @@ function Stepper(): JSX.Element {
       </button>
     </div>
   );
-}
+};
 
 export default Stepper;

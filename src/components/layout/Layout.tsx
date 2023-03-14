@@ -4,13 +4,11 @@ interface PropTypes {
   children: React.ReactNode;
 }
 
-function Layout({ children }: PropTypes) {
-  return (
-    <>
-      <Navbar />
-      {children}
-    </>
-  );
-}
+const Layout = ({ children }: PropTypes) => (
+  <>
+    <Navbar />
+    {children}
+  </>
+);
 
 export default Layout;
