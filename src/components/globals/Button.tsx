@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // Set types for props
-type PropTypes = {
+export type ButtonTypes = {
   type: "button" | "internal-link" | "external-link" | "submit";
   styling: "solid" | "outline" | "transparent";
   href?: string;
@@ -11,7 +11,7 @@ type PropTypes = {
   onClick?: () => void;
 };
 
-const Button = ({ type, styling, href, text, onClick }: PropTypes) => {
+export const Button = ({ type, styling, href, text, onClick }: ButtonTypes) => {
   // Error message if you forget href or onClick
   useEffect(() => {
     if ((type === "button" || type === "submit") && !onClick) {
@@ -89,5 +89,3 @@ const Button = ({ type, styling, href, text, onClick }: PropTypes) => {
 
   return renderButton();
 };
-
-export default Button;

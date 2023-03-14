@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 import { LanguageContext } from "@/store/LanguageContext";
 
 // Import components
-import Button from "@/components/globals/Button";
-import Dropdown from "@/components/globals/Dropdown";
+import { Button } from "@/components/globals/Button";
+import { Dropdown } from "@/components/globals/Dropdown";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();

@@ -10,14 +10,14 @@ import {
 import { useClickOutside } from "@/hooks/useClickOutside";
 
 // Type checking for the dropdown
-type PropTypes = {
+export type DropdownTypes = {
   search: boolean;
   options: { label: string; value: string }[];
   onChange: (value: string) => void;
 };
 
 // Component
-const Dropdown = ({ search, options, onChange }: PropTypes) => {
+export const Dropdown = ({ search, options, onChange }: DropdownTypes) => {
   const [label, setLabel] = useState(options[0].label);
   const [isOpen, setIsOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -76,7 +76,7 @@ const Dropdown = ({ search, options, onChange }: PropTypes) => {
                     type="text"
                     name="language-search"
                     id="language-search"
-                    className="focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md pl-8 transition-all duration-200"
+                    className="inline-flex items-center justify-center px-8 py-2 text-sm w-full rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200"
                     placeholder="Search"
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}
