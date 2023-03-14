@@ -14,9 +14,7 @@
     "cy:run-e2e": "cypress run --e2e --browser chrome",
     "cy:run-unit": "cypress run --component --browser chrome",
     "e2e": "start-test dev 3000 cy:run-e2e",
-    "test": "cypress run --component --browser chrome",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "cypress run --component --browser chrome"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
@@ -37,13 +35,6 @@
     "@cypress/react18": "^2.0.0",
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@limegrass/eslint-plugin-import-alias": "^1.0.6",
-    "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-interactions": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
-    "@storybook/builder-vite": "^0.4.2",
-    "@storybook/react": "^6.5.16",
-    "@storybook/testing-library": "^0.0.13",
     "@types/cypress__code-coverage": "^3.10.0",
     "@types/node": "^18.14.0",
     "@types/react": "^18.0.27",
@@ -63,7 +54,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-storybook": "^0.6.11",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "start-server-and-test": "^2.0.0",
