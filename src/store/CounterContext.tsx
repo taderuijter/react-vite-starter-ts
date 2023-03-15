@@ -8,7 +8,10 @@ type Action = { type: "increment" } | { type: "decrement" };
 
 type Dispatch = (action: Action) => void;
 
-const CounterContext = createContext<{ state: State; dispatch: Dispatch }>({
+export const CounterContext = createContext<{
+  state: State;
+  dispatch: Dispatch;
+}>({
   state: { count: 0 },
   dispatch: () => {
     console.log("Default dispatch called!");
@@ -26,7 +29,7 @@ const countReducer = (state: State, action: Action): State => {
   }
 };
 
-const CounterProvider: React.FC<{ children: React.ReactNode }> = ({
+export const CounterProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [state, dispatch] = useReducer(countReducer, { count: 0 });
@@ -41,5 +44,3 @@ const CounterProvider: React.FC<{ children: React.ReactNode }> = ({
     </CounterContext.Provider>
   );
 };
-
-export { CounterContext, CounterProvider };

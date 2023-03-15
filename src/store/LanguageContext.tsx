@@ -1,9 +1,13 @@
 import { createContext, FC } from "react";
 
-interface Language {
+type Language = {
   label: string;
   value: string;
-}
+};
+
+type Props = {
+  children: React.ReactNode;
+};
 
 const initialState: Language[] = [
   { label: "English", value: "en" },
@@ -11,10 +15,6 @@ const initialState: Language[] = [
 ];
 
 export const LanguageContext = createContext<Language[]>(initialState);
-
-interface Props {
-  children: React.ReactNode;
-}
 
 export const LanguageProvider: FC<Props> = ({ children }) => (
   <LanguageContext.Provider value={initialState}>
