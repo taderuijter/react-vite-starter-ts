@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { LanguageContext } from "@/store/LanguageContext";
 
 // Import components
-import { Button } from "@/components/globals/Button";
+import { InternalLink } from "@/components/globals/Links";
 import { Dropdown } from "@/components/globals/Dropdown";
 
 const Navbar = () => {
@@ -49,13 +49,13 @@ const Navbar = () => {
           </div>
 
           <nav className="hidden lg:items-center lg:ml-16 lg:mr-auto lg:space-x-4 lg:flex">
-            <Button
+            <InternalLink
               type="internal-link"
               text={t("components.navbar.links.home")}
               href="/"
               styling="transparent"
             />
-            <Button
+            <InternalLink
               type="internal-link"
               text={t("components.navbar.links.about")}
               href="/about"
@@ -71,7 +71,7 @@ const Navbar = () => {
                 changeLanguage(value);
               }}
             />
-            <Button
+            <InternalLink
               type="external-link"
               text="Check on Github"
               href="https://www.github.com"
@@ -84,13 +84,13 @@ const Navbar = () => {
           <nav>
             <div className="px-1 py-8">
               <div className="grid gap-y-7">
-                <Button
+                <InternalLink
                   type="internal-link"
                   text={t("components.navbar.links.home")}
                   href="/"
                   styling="transparent"
                 />
-                <Button
+                <InternalLink
                   type="internal-link"
                   text={t("components.navbar.links.about")}
                   href="/about"
@@ -104,7 +104,7 @@ const Navbar = () => {
                     changeLanguage(value);
                   }}
                 />
-                <Button
+                <InternalLink
                   type="external-link"
                   text="Check on Github"
                   href="https://www.github.com"

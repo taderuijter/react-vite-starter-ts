@@ -1,14 +1,17 @@
+// Import React libraries
+import { Link } from "react-router-dom";
+
 // Set types for props
-export type ButtonTypes = {
-  type: "button" | "submit";
+export type LinkTypes = {
+  type: "internal-link" | "external-link";
   styling: "solid" | "outline" | "transparent";
+  href: string;
   text: string;
-  onClick: () => void;
 };
 
-export const Button = ({ type, styling, text, onClick }: ButtonTypes) => {
+export const InternalLink = ({ type, styling, href, text }: LinkTypes) => {
   // Render button styling
-  const renderButtonLayout = () => {
+  const renderLinkLayout = () => {
     switch (styling) {
       case "solid":
         return "text-white bg-primary border border-transparent rounded-md hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary";
@@ -20,30 +23,33 @@ export const Button = ({ type, styling, text, onClick }: ButtonTypes) => {
   };
 
   // Render buttons type
-  const renderButton = () => {
+  const renderLink = () => {
     switch (type) {
-      case "button":
+      case "internal-link":
         return (
-          <button
-            onClick={onClick}
-            type="button"
-            className={`inline-flex items-center justify-center px-6 py-2 text-sm font-semibold transition-all duration-200 ${renderButtonLayout()}`}
+          <Link
+            to={href}
+            className={`inline-flex items-center justify-center px-6 py-2 text-sm font-semibold transition-all duration-200 ${renderLinkLayout()}`}
+            role="button"
             aria-label={text}>
             {text}
-          </button>
+          </Link>
+        );
+      case "external-link":
+        return (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center justify-center px-6 py-2 text-sm font-semibold transition-all duration-200 ${renderLinkLayout()}`}
+            aria-label={text}>
+            {text}
+          </a>
         );
       default:
-        return (
-          <button
-            onClick={onClick}
-            type="submit"
-            className={`inline-flex items-center justify-center px-6 py-2 text-sm font-semibold transition-all duration-200 ${renderButtonLayout()}`}
-            aria-label={text}>
-            {text}
-          </button>
-        );
+        return null;
     }
   };
 
-  return renderButton();
+  return renderLink();
 };
