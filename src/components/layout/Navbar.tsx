@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { LanguageContext } from "@/store/LanguageContext";
 
 // Import components
-import { InternalLink } from "@/components/globals/Links";
+import { InternalLink, ExternalLink } from "@/components/globals/Links";
 import { Dropdown } from "@/components/globals/Dropdown";
 
 const Navbar = () => {
@@ -48,18 +48,16 @@ const Navbar = () => {
             </button>
           </div>
 
-          <nav className="hidden lg:items-center lg:ml-16 lg:mr-auto lg:space-x-4 lg:flex">
+          <nav className="hidden lg:items-center lg:ml-16 lg:mr-auto lg:space-x-8 lg:flex">
             <InternalLink
-              type="internal-link"
               text={t("components.navbar.links.home")}
               href="/"
-              styling="transparent"
+              styling="link"
             />
             <InternalLink
-              type="internal-link"
               text={t("components.navbar.links.about")}
               href="/about"
-              styling="transparent"
+              styling="link"
             />
           </nav>
 
@@ -71,8 +69,7 @@ const Navbar = () => {
                 changeLanguage(value);
               }}
             />
-            <InternalLink
-              type="external-link"
+            <ExternalLink
               text="Check on Github"
               href="https://www.github.com"
               styling="solid"
@@ -85,16 +82,14 @@ const Navbar = () => {
             <div className="px-1 py-8">
               <div className="grid gap-y-7">
                 <InternalLink
-                  type="internal-link"
                   text={t("components.navbar.links.home")}
                   href="/"
-                  styling="transparent"
+                  styling="link"
                 />
                 <InternalLink
-                  type="internal-link"
                   text={t("components.navbar.links.about")}
                   href="/about"
-                  styling="transparent"
+                  styling="link"
                 />
 
                 <Dropdown
@@ -104,8 +99,7 @@ const Navbar = () => {
                     changeLanguage(value);
                   }}
                 />
-                <InternalLink
-                  type="external-link"
+                <ExternalLink
                   text="Check on Github"
                   href="https://www.github.com"
                   styling="solid"

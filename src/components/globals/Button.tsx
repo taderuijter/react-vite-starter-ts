@@ -1,6 +1,6 @@
 // Set types for props
 export type ButtonTypes = {
-  type: "button" | "submit";
+  type: "button" | "submit" | "reset";
   styling: "solid" | "outline" | "transparent";
   text: string;
   onClick: () => void;
@@ -19,31 +19,15 @@ export const Button = ({ type, styling, text, onClick }: ButtonTypes) => {
     }
   };
 
-  // Render buttons type
-  const renderButton = () => {
-    switch (type) {
-      case "button":
-        return (
-          <button
-            onClick={onClick}
-            type="button"
-            className={`inline-flex items-center justify-center px-6 py-2 text-sm font-semibold transition-all duration-200 ${renderButtonLayout()}`}
-            aria-label={text}>
-            {text}
-          </button>
-        );
-      default:
-        return (
-          <button
-            onClick={onClick}
-            type="submit"
-            className={`inline-flex items-center justify-center px-6 py-2 text-sm font-semibold transition-all duration-200 ${renderButtonLayout()}`}
-            aria-label={text}>
-            {text}
-          </button>
-        );
-    }
-  };
-
-  return renderButton();
+  return (
+    <button
+      onClick={onClick}
+      type={
+        type === "button" ? "button" : type === "submit" ? "submit" : "reset"
+      }
+      className={`inline-flex items-center justify-center px-6 py-2 text-sm font-semibold transition-all duration-200 ${renderButtonLayout()}`}
+      aria-label={text}>
+      {text}
+    </button>
+  );
 };
