@@ -2,7 +2,7 @@
 import { Helmet } from "react-helmet";
 
 // Import components
-import Layout from "@/components/layout/Layout";
+import Layout from "components/layout/Layout";
 
 function NotFound() {
   return (

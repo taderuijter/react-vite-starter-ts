@@ -1,7 +1,7 @@
 import React from "react";
-import { CounterProvider } from "@/store/CounterContext";
-import { GlobalProvider } from "@/store/GlobalContext";
-import { LanguageProvider } from "@/store/LanguageContext";
+import { CounterProvider } from "store/CounterContext";
+import { GlobalProvider } from "store/GlobalContext";
+import { LanguageProvider } from "store/LanguageContext";
 
 type AppProviderProps = {
   children: React.ReactNode;

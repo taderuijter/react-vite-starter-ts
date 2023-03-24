@@ -3,11 +3,11 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 import { useTranslation } from "react-i18next";
-import { LanguageContext } from "@/store/LanguageContext";
+import { LanguageContext } from "store/LanguageContext";
 
 // Import components
-import { InternalLink, ExternalLink } from "@/components/globals/Links";
-import { Dropdown } from "@/components/globals/Dropdown";
+import { InternalLink, ExternalLink } from "components/inputs/Links";
+import { Dropdown } from "components/inputs/Dropdown";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -56,7 +56,7 @@ const Navbar = () => {
             />
             <InternalLink
               text={t("components.navbar.links.about")}
-              href="/about"
+              href="/inputs"
               styling="link"
             />
           </nav>
@@ -88,7 +88,7 @@ const Navbar = () => {
                 />
                 <InternalLink
                   text={t("components.navbar.links.about")}
-                  href="/about"
+                  href="/inputs"
                   styling="link"
                 />
 

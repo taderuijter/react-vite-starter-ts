@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CounterContext } from "@/store/CounterContext";
+import { CounterContext } from "store/CounterContext";
 
 const Stepper = () => {
   const { state, dispatch } = useContext(CounterContext);

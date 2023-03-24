@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { XMarkIcon } from "@heroicons/react/20/solid";
-import { GlobalContext } from "@/store/GlobalContext";
+import { GlobalContext } from "store/GlobalContext";
 
 // Set types for props
 export type BannerTypes = {

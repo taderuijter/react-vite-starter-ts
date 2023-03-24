@@ -3,29 +3,27 @@
     "navbar": {
       "links": {
         "home": "Home",
-        "about": "Over"
+        "about": "Invoer"
       }
     },
-    "languageSwitcher": {
-      "label": "Taal",
-      "currentLanguage": "Nederlands",
-      "languages": {
-        "en": "English",
-        "nl": "Nederlands"
-      },
-      "search": {
-        "placeholder": "Zoek naar een taal"
-      }
+    "dropdown": {
+      "search": { "placeholder": "Zoeken" }
+    },
+    "cookies": {
+      "message": "Onze website gebruikt cookies om uw browse-ervaring te verbeteren en inhoud en advertenties op maat te bieden. Door onze website te gebruiken, gaat u akkoord met ons gebruik van cookies. U kunt uw cookie-instellingen op elk moment beheren via uw browser.",
+      "accept": "Accepteren",
+      "reject": "Afwijzen",
+      "page": "Cookiebeleid"
     }
   },
   "pages": {
     "home": {
-      "title": "Startpagina",
-      "content": "Dit is de startpagina"
+      "title": "Welkom bij de React Boilerplate",
+      "content": "Onze React-boilerplate, gebouwd met Vite en TypeScript, is het perfecte startpunt voor uw volgende project. Met e2e- en unit-testing al ingesteld, kunt u direct aan de slag met het bouwen van robuuste en foutloze applicaties. Zeer aanpasbaar en gemakkelijk te gebruiken, onze boilerplate is de ideale keuze voor ontwikkelaars van alle niveaus."
     },
-    "about": {
-      "title": "Welkom bij de React-boilerplate",
-      "content": "Onze React-boilerplate, gebouwd met Vite en TypeScript, is het perfecte startpunt voor uw volgende project. Met e2e- en unit testing al ingesteld, kunt u meteen beginnen met het bouwen van robuuste en foutloze applicaties. Zeer aanpasbaar en gemakkelijk te gebruiken, onze boilerplate is de ideale keuze voor ontwikkelaars van alle vaardigheidsniveaus."
+    "inputs": {
+      "title": "Invoer",
+      "content": "Deze componenten stellen gebruikers in staat om met de website of applicatie te interageren door invoergegevens te verstrekken of selecties te maken. Voorbeelden hiervan zijn formulieren, tekstvakken, knoppen, vervolgkeuzemenu's, selectievakjes, radioknoppen en schuifregelaars. De aanwezigheid van invoercomponenten geeft aan dat de pagina is ontworpen om interactief te zijn en responsief op gebruikersinvoer."
     }
   }
 }

@@ -3,19 +3,19 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Global styles
-import "@/assets/styles/index.css";
+import "assets/styles/index.css";
 
 // import i18n (needs to be bundled ;))
-import "@/plugins/i18n";
+import "plugins/i18n";
 
 // Router pages
 import TagManager from "react-gtm-module";
-import Home from "@/pages/Home";
-import About from "@/pages/About";
-import NotFound from "@/pages/NotFound";
+import Home from "pages/Home";
+import Inputs from "pages/Inputs";
+import NotFound from "pages/NotFound";
 
 // Store
-import AppProvider from "@/store/AppProvider";
+import AppProvider from "store/AppProvider";
 
 // Google tag manager
 const tagManagerArgs = {
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/about",
-    element: <About />,
+    path: "/inputs",
+    element: <Inputs />,
   },
   {
     path: "*",
