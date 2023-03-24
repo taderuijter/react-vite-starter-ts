@@ -12,6 +12,8 @@ import { TextArea } from "components/inputs/TextArea";
 import { Badge } from "components/labels/Badge";
 import { Toggle } from "components/inputs/Toggle";
 import { Checkbox } from "components/inputs/Checkbox";
+import { Password } from "components/inputs/Password";
+import { Breadcrumbs } from "components/layout/Breadcrumbs";
 
 function Inputs() {
   const { t } = useTranslation();
@@ -25,6 +27,11 @@ function Inputs() {
 
       <Layout>
         <Container className="mt-8 mb-8 space-y-8">
+          <Breadcrumbs
+            pages={[
+              { id: "1", name: "Inputs", href: "/inputs", current: true },
+            ]}
+          />
           <h1 className="text-4xl font-bold text-gray-900">
             {t("pages.inputs.title")}
           </h1>
@@ -60,6 +67,16 @@ function Inputs() {
             name="email"
             id="email"
             placeholder="Enter your e-mail address"
+            onChange={(value) => {
+              console.log(value);
+            }}
+          />
+          <Password
+            required={true}
+            label="Password"
+            name="password"
+            id="password"
+            placeholder="Enter your password"
             onChange={(value) => {
               console.log(value);
             }}
