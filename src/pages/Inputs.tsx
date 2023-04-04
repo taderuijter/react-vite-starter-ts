@@ -3,17 +3,17 @@ import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 
 // Import components
-import Layout from "components/layout/Layout";
-import Container from "components/layout/Container";
-import { InputField } from "components/inputs/InputField";
-import { Select } from "components/inputs/Select";
-import { Radio } from "components/inputs/Radio";
-import { TextArea } from "components/inputs/TextArea";
-import { Badge } from "components/labels/Badge";
-import { Toggle } from "components/inputs/Toggle";
-import { Checkbox } from "components/inputs/Checkbox";
-import { Password } from "components/inputs/Password";
-import { Breadcrumbs } from "components/layout/Breadcrumbs";
+import { Layout } from "design-system/layout/Layout/Layout";
+import { Container } from "design-system/layout/Container/Container";
+import { InputField } from "design-system/inputs/InputField/InputField";
+import { Select } from "design-system/inputs/Select/Select";
+import { Radio } from "design-system/inputs/Radio/Radio";
+import { TextArea } from "design-system/inputs/TextArea/TextArea";
+import { Badge } from "design-system/lables/Badge/Badge";
+import { Toggle } from "design-system/inputs/Toggle/Toggle";
+import { Checkbox } from "design-system/inputs/Checkbox/Checkbox";
+import { Password } from "design-system/inputs/Password/Password";
+import { Breadcrumbs } from "design-system/navigation/Breadcrumbs/Breadcrumbs";
 
 function Inputs() {
   const { t } = useTranslation();

@@ -3,10 +3,10 @@ import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 
 // Import components
-import Layout from "components/layout/Layout";
-import Container from "components/layout/Container";
-import Stepper from "components/organisms/Stepper";
-import { Alert } from "components/messages/Alert";
+import { Layout } from "design-system/layout/Layout/Layout";
+import { Container } from "design-system/layout/Container/Container";
+import Stepper from "components/Stepper/Stepper";
+import { Alert } from "design-system/messages/Alert/Alert";
 
 function Home() {
   const { t } = useTranslation();
