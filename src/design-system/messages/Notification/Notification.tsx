@@ -10,7 +10,7 @@ import { XMarkIcon } from "@heroicons/react/20/solid";
 
 // Input type
 export interface NotificationTypes {
-  type: "succes" | "error" | "warning" | "info";
+  type: "success" | "error" | "warning" | "info";
   title: string;
   description: string;
 }
@@ -41,7 +41,7 @@ export const Notification = ({
               <div className="p-4">
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    {(type === "succes" && (
+                    {(type === "success" && (
                       <CheckCircleIcon
                         className="h-6 w-6 text-green-400"
                         aria-hidden="true"

@@ -6,10 +6,10 @@ import { useTranslation } from "react-i18next";
 import { LanguageContext } from "store/LanguageContext";
 
 // Import components
-import { InternalLink, ExternalLink } from "design-system/inputs/Links/Links";
+import { InternalLink, ExternalLink } from "design-system/actions/Links/Links";
 import { Dropdown } from "design-system/inputs/Dropdown/Dropdown";
 
-const Navbar = () => {
+export const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [expanded, setExpanded] = useState<boolean>(false);
   const languages = useContext(LanguageContext);
@@ -59,6 +59,7 @@ const Navbar = () => {
               href="/inputs"
               styling="link"
             />
+            <InternalLink text="Users" href="/users" styling="link" />
           </nav>
 
           <nav className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-4">
@@ -112,4 +113,3 @@ const Navbar = () => {
     </header>
   );
 };
-export default Navbar;

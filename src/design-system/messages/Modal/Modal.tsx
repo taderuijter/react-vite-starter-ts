@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Button } from "design-system/inputs/Button/Button";
+import { Button } from "design-system/actions/Button/Button";
 
 // Modal types
 interface ModalTypes {

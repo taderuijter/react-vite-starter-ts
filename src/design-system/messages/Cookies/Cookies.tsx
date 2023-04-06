@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { GlobalContext } from "store/GlobalContext";
-import { Button } from "design-system/inputs/Button/Button";
+import { Button } from "design-system/actions/Button/Button";
 
 export const Cookies = () => {
   const { t } = useTranslation();

@@ -4,4 +4,4 @@ export interface TextTypes {
   children: ReactNode;
 }
 
-export const Content = ({ children }: TextTypes) => <div>{children}</div>;
+export const Text = ({ children }: TextTypes) => <div>{children}</div>;
