@@ -3,7 +3,8 @@
     "navbar": {
       "links": {
         "home": "Home",
-        "about": "Inputs"
+        "inputs": "Inputs",
+        "users": "Users"
       }
     },
     "dropdown": {
@@ -24,6 +25,18 @@
     "inputs": {
       "title": "Inputs",
       "content": "These components allow users to interact with the website or application by providing input data or making selections. Examples include forms, text boxes, buttons, drop-down menus, checkboxes, radio buttons, and sliders. The presence of input components indicates that the page is designed to be interactive and responsive to user input."
+    },
+    "users": {
+      "title": "Users",
+      "content": "This table presents a concise summary of user information, including key details such as username, full name, email address, registration date, and last login time. Use it to quickly gain insights into individual user activity and engagement within the platform."
+    }
+  },
+  "queries": {
+    "users": {
+      "name": "Name",
+      "gender": "Gender",
+      "birthday": "Birthday",
+      "skin": "Skin color"
     }
   }
 }

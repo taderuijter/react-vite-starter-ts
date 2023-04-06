@@ -55,11 +55,15 @@ export const Navbar = () => {
               styling="link"
             />
             <InternalLink
-              text={t("components.navbar.links.about")}
+              text={t("components.navbar.links.inputs")}
               href="/inputs"
               styling="link"
             />
-            <InternalLink text="Users" href="/users" styling="link" />
+            <InternalLink
+              text={t("components.navbar.links.users")}
+              href="/users"
+              styling="link"
+            />
           </nav>
 
           <nav className="hidden lg:flex lg:items-center lg:justify-end lg:space-x-4">

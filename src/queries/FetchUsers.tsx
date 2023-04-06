@@ -1,24 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import { useFetch } from "hooks/useFetch";
+import { useTranslation } from "react-i18next";
 
 export const FetchUsers = () => {
+  const { t } = useTranslation();
   const { isLoading, data } = useQuery(["users"], useFetch);
 
   return (
     <div className="w-full">
       {isLoading && (
-        <div className="flex justify-center items-center h-screen">
-          <div className="w-16 h-16 relative">
-            <svg
-              className="animate-spin absolute h-full w-full text-indigo-500"
-              fill="none"
-              viewBox="0 0 24 24">
-              <path
-                d="M12 6a1 1 0 011 1v5a1 1 0 01-2 0V7a1 1 0 011-1zM12 13a1 1 0 100 2 1 1 0 000-2z"
-                className="heroicon-ui"
-              />
-            </svg>
-          </div>
+        <div className="flex justify-center items-center h-[25vw] bg-slate-100 rounded-md">
+          Loading users...
         </div>
       )}
       {data && (
@@ -28,22 +20,22 @@ export const FetchUsers = () => {
               <th
                 scope="col"
                 className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-3">
-                Name
+                {t("queries.users.name")}
               </th>
               <th
                 scope="col"
                 className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                Gender
+                {t("queries.users.gender")}
               </th>
               <th
                 scope="col"
                 className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                Birth year
+                {t("queries.users.birthday")}
               </th>
               <th
                 scope="col"
                 className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                Skin color
+                {t("queries.users.skin")}
               </th>
             </tr>
           </thead>
