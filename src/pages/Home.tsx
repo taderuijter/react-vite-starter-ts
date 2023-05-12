@@ -7,6 +7,7 @@ import { Layout } from "design-system/layout/Layout/Layout";
 import { Container } from "design-system/layout/Container/Container";
 import Stepper from "components/Stepper/Stepper";
 import { Alert } from "design-system/messages/Alert/Alert";
+import { Modal } from "design-system/messages/Modal/Modal";
 
 function Home() {
   const { t } = useTranslation();
@@ -32,6 +33,12 @@ function Home() {
             {t("pages.home.content")}
           </p>
           <Stepper />
+          <Modal
+            title="Test"
+            content="Test"
+            buttonText="Accept"
+            buttonEvent={() => console.log("BAMI")}
+          />
         </Container>
       </Layout>
     </div>

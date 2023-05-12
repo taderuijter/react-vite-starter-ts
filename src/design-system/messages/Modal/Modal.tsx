@@ -1,14 +1,15 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Button } from "design-system/actions/Button/Button";
+import { BoltIcon } from "@heroicons/react/24/solid";
 
 // Modal types
 interface ModalProps {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   title: string;
   content: string;
   buttonText: string;
-  onClick: () => void;
+  buttonEvent: () => void;
 }
 
 export const Modal = ({
@@ -16,7 +17,7 @@ export const Modal = ({
   title,
   content,
   buttonText,
-  onClick,
+  buttonEvent,
 }: ModalProps) => {
   const [open, setOpen] = useState(true);
 
@@ -46,11 +47,17 @@ export const Modal = ({
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
                 <div className="sm:flex sm:items-start">
-                  {icon}
+                  {icon ? (
+                    icon
+                  ) : (
+                    <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full sm:mx-0 sm:h-10 sm:w-10 bg-blue-100">
+                      <BoltIcon className="h-[20px] w-[20px] text-blue-500" />
+                    </div>
+                  )}
                   <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                     <Dialog.Title
                       as="h3"
-                      className="text-base font-semibold leading-6 text-gray-900">
+                      className="text-lg font-semibold leading-6 text-gray-900">
                       {title}
                     </Dialog.Title>
                     <div className="mt-2">
@@ -63,7 +70,7 @@ export const Modal = ({
                     type="button"
                     styling="solid"
                     text={buttonText}
-                    onClick={onClick}
+                    onClick={buttonEvent}
                   />
                   <Button
                     type="button"
