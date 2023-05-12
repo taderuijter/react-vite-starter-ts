@@ -7,10 +7,17 @@ interface ModalProps {
   icon: React.ReactNode;
   title: string;
   content: string;
-  button: React.ReactNode;
+  buttonText: string;
+  onClick: () => void;
 }
 
-export const Modal = ({ icon, title, content, button }: ModalProps) => {
+export const Modal = ({
+  icon,
+  title,
+  content,
+  buttonText,
+  onClick,
+}: ModalProps) => {
   const [open, setOpen] = useState(true);
 
   return (
@@ -52,7 +59,12 @@ export const Modal = ({ icon, title, content, button }: ModalProps) => {
                   </div>
                 </div>
                 <div className="mt-5 sm:mt-4 sm:ml-10 sm:flex sm:pl-4 space-x-4">
-                  {button}
+                  <Button
+                    type="button"
+                    styling="solid"
+                    text={buttonText}
+                    onClick={onClick}
+                  />
                   <Button
                     type="button"
                     styling="outline"
