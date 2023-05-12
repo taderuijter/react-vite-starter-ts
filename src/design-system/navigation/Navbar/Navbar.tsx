@@ -70,8 +70,8 @@ export const Navbar = () => {
             <Dropdown
               search={true}
               options={languages}
-              onChange={(value) => {
-                changeLanguage(value);
+              onChange={(event) => {
+                changeLanguage(event.value);
               }}
             />
             <ExternalLink
@@ -100,8 +100,8 @@ export const Navbar = () => {
                 <Dropdown
                   search={false}
                   options={languages}
-                  onChange={(value) => {
-                    changeLanguage(value);
+                  onChange={(event) => {
+                    changeLanguage(event.value);
                   }}
                 />
                 <ExternalLink

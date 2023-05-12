@@ -1,7 +1,42 @@
-import React from "react";
+import { useState } from "react";
+import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 
-function Search() {
-  return <div>Search</div>;
+// Input type
+export interface SearchProps {
+  name: string;
+  id: string;
+  placeholder: string;
+  disabled?: boolean;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
-export default Search;
+export const Search = ({
+  name,
+  id,
+  placeholder,
+  disabled,
+  onChange,
+}: SearchProps) => {
+  const [value, setValue] = useState("");
+
+  const inputHandler: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    setValue(event.target.value);
+    onChange(event);
+  };
+
+  return (
+    <div className="relative mt-2 flex items-center">
+      <MagnifyingGlassIcon className="absolute h-[18px] w-[18px] text-gray-400 ml-2" />
+      <input
+        type="text"
+        name={name}
+        id={id}
+        placeholder={placeholder}
+        disabled={disabled}
+        value={value}
+        onChange={inputHandler}
+        className="block w-full rounded-md border-0 py-1.5 px-8 sm:text-sm sm:leading-6 text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 disabled:ring-gray-200"
+      />
+    </div>
+  );
+};

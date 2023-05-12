@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { Layout } from "design-system/layout/Layout/Layout";
 import { Container } from "design-system/layout/Container/Container";
 import { FetchUsers } from "queries/FetchUsers";
+import { Search } from "design-system/inputs/Search/Search";
 
 function Home() {
   const { t } = useTranslation();
@@ -25,6 +26,12 @@ function Home() {
           <p className="mt-4 text-lg text-gray-500">
             {t("pages.users.content")}
           </p>
+          <Search
+            name="search"
+            id="search"
+            placeholder="Search for a user"
+            onChange={(event) => console.log(event.target.value)}
+          />
           <FetchUsers />
         </Container>
       </Layout>
