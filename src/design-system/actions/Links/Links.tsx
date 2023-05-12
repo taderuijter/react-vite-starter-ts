@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 // Set types for props
-export interface LinkTypes {
+export interface LinkProps {
   styling: "solid" | "outline" | "transparent" | "link";
   href: string;
   text: string;
@@ -22,17 +22,13 @@ const renderLinkLayout = (
   }
 };
 
-export const InternalLink = ({ styling, href, text }: LinkTypes) => (
-  <Link
-    to={href}
-    className={`${renderLinkLayout(styling)}`}
-    role="button"
-    aria-label={text}>
+export const InternalLink = ({ styling, href, text }: LinkProps) => (
+  <Link to={href} className={`${renderLinkLayout(styling)}`} aria-label={text}>
     {text}
   </Link>
 );
 
-export const ExternalLink = ({ styling, href, text }: LinkTypes) => (
+export const ExternalLink = ({ styling, href, text }: LinkProps) => (
   <a
     href={href}
     target="_blank"

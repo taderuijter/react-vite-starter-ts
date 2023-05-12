@@ -1,12 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 // Input type
-export interface CheckBoxTypes {
+export interface CheckBoxProps {
   label: string;
   srOnly?: boolean;
   required?: boolean;
   options: { id: string; value: string }[];
-  onChange: (values: string[]) => void;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 export const Checkbox = ({
@@ -15,20 +15,22 @@ export const Checkbox = ({
   required,
   options,
   onChange,
-}: CheckBoxTypes) => {
+}: CheckBoxProps) => {
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
 
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCheckboxChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event,
+  ) => {
     const { value, checked } = event.target;
 
     if (checked) {
       setSelectedValues([...selectedValues, value]);
-      onChange([...selectedValues, value]);
     } else {
       const newSelectedValues = selectedValues.filter((v) => v !== value);
       setSelectedValues(newSelectedValues);
-      onChange(newSelectedValues);
     }
+
+    onChange(event);
   };
 
   return (

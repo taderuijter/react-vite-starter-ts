@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/24/solid";
 
 // Input type
-export interface AlertTypes {
+export interface AlertProps {
   type: "success" | "error" | "warning" | "info";
   title: string;
   description: string;
@@ -43,7 +43,7 @@ const alertStyles = {
   },
 };
 
-export const Alert = ({ type, title, description }: AlertTypes) => {
+export const Alert = ({ type, title, description }: AlertProps) => {
   const IconComponent = alertStyles[type].icon;
 
   return (

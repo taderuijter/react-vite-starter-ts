@@ -2,11 +2,11 @@ import { ChevronRightIcon, HomeIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 
 // Input type
-export interface BreadcrumbsTypes {
+export interface BreadcrumbsProps {
   pages: { id: string; name: string; href: string; current: boolean }[];
 }
 
-export const Breadcrumbs = ({ pages }: BreadcrumbsTypes) => (
+export const Breadcrumbs = ({ pages }: BreadcrumbsProps) => (
   <nav
     className="flex"
     aria-label="Breadcrumb"

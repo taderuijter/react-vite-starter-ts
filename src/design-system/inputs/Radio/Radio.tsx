@@ -1,11 +1,11 @@
 // Input type
-export interface RadioTypes {
+export interface RadioProps {
   label: string;
   description?: string;
   srOnly?: boolean;
   required?: boolean;
   options: { id: string; value: string }[];
-  onChange: (value: string) => void;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 export const Radio = ({
@@ -15,9 +15,9 @@ export const Radio = ({
   required,
   options,
   onChange,
-}: RadioTypes) => {
-  const inputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(event.target.value);
+}: RadioProps) => {
+  const inputHandler: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    onChange(event);
   };
 
   return (

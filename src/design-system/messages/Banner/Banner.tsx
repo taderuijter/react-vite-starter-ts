@@ -4,12 +4,12 @@ import { XMarkIcon } from "@heroicons/react/20/solid";
 import { GlobalContext } from "store/GlobalContext";
 
 // Set types for props
-export interface BannerTypes {
+export interface BannerProps {
   href?: string;
   children: React.ReactNode;
 }
 
-export const Banner = ({ href, children }: BannerTypes) => {
+export const Banner = ({ href, children }: BannerProps) => {
   const { state, dispatch } = useContext(GlobalContext);
 
   const handleClose = () => {

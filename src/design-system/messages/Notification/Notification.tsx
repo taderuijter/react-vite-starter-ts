@@ -9,7 +9,7 @@ import {
 import { XMarkIcon } from "@heroicons/react/20/solid";
 
 // Input type
-export interface NotificationTypes {
+export interface NotificationProps {
   type: "success" | "error" | "warning" | "info";
   title: string;
   description: string;
@@ -19,7 +19,7 @@ export const Notification = ({
   type,
   title,
   description,
-}: NotificationTypes) => {
+}: NotificationProps) => {
   const [show, setShow] = useState(true);
 
   return (

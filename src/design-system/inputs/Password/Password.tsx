@@ -1,9 +1,8 @@
 import { useState } from "react";
-
 import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/outline";
 
 // Input type
-export interface PasswordTypes {
+export interface PasswordProps {
   label: string;
   srOnly?: boolean;
   required?: boolean;
@@ -11,7 +10,7 @@ export interface PasswordTypes {
   id: string;
   placeholder: string;
   disabled?: boolean;
-  onChange: (value: string | number) => void;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 export const Password = ({
@@ -23,7 +22,7 @@ export const Password = ({
   placeholder,
   disabled,
   onChange,
-}: PasswordTypes) => {
+}: PasswordProps) => {
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const [blurred, setBlurred] = useState(false);
@@ -40,9 +39,9 @@ export const Password = ({
     }
   };
 
-  const inputHandler = (value: string) => {
-    setValue(value);
-    onChange(value);
+  const inputHandler: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    setValue(event.target.value);
+    onChange(event);
   };
 
   const togglePasswordVisibility = () => {
@@ -73,7 +72,7 @@ export const Password = ({
           disabled={disabled}
           value={value}
           onBlur={handleBlur}
-          onChange={(e) => inputHandler(e.target.value)}
+          onChange={inputHandler}
         />
         <button
           type="button"

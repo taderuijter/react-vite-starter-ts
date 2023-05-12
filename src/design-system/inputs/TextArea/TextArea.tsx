@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 // Input type
-export interface TextAreaTypes {
+export interface TextAreaProps {
   label: string;
   srOnly?: boolean;
   required?: boolean;
   name: string;
   id: string;
   disabled?: boolean;
-  onChange: (value: string) => void;
+  onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
 }
 
 export const TextArea = ({
@@ -19,7 +19,7 @@ export const TextArea = ({
   id,
   disabled,
   onChange,
-}: TextAreaTypes) => {
+}: TextAreaProps) => {
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const [blurred, setBlurred] = useState(false);
@@ -35,9 +35,11 @@ export const TextArea = ({
     }
   };
 
-  const inputHandler = (value: string) => {
-    setValue(value);
-    onChange(value);
+  const inputHandler: React.ChangeEventHandler<HTMLTextAreaElement> = (
+    event,
+  ) => {
+    setValue(event.target.value);
+    onChange(event);
   };
 
   return (
@@ -63,7 +65,7 @@ export const TextArea = ({
           defaultValue={""}
           disabled={disabled}
           onBlur={handleBlur}
-          onChange={(e) => inputHandler(e.target.value)}
+          onChange={inputHandler}
         />
       </div>
       {error && blurred && (

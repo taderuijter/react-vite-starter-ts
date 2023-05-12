@@ -1,10 +1,10 @@
 import { Navbar } from "design-system/navigation/Navbar/Navbar";
 
-export interface LayoutTypes {
+export interface LayoutProps {
   children: React.ReactNode;
 }
 
-export const Layout = ({ children }: LayoutTypes) => (
+export const Layout = ({ children }: LayoutProps) => (
   <>
     <Navbar />
     {children}

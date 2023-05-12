@@ -18,6 +18,11 @@ import { Breadcrumbs } from "design-system/navigation/Breadcrumbs/Breadcrumbs";
 function Inputs() {
   const { t } = useTranslation();
 
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, name } = event.target;
+    console.log(`Name: ${name}, Value: ${value}`);
+  };
+
   return (
     <>
       <Helmet>
@@ -44,20 +49,8 @@ function Inputs() {
             name="firstname"
             id="firstname"
             placeholder="Enter your first name"
-            onChange={(value) => {
-              console.log(value);
-            }}
-          />
-          <InputField
-            required={false}
-            label="Last name"
-            type="text"
-            disabled={true}
-            name="lastname"
-            id="lastname"
-            placeholder="Enter your last name"
-            onChange={(value) => {
-              console.log(value);
+            onChange={(event) => {
+              handleInput(event);
             }}
           />
           <InputField
@@ -67,8 +60,8 @@ function Inputs() {
             name="email"
             id="email"
             placeholder="Enter your e-mail address"
-            onChange={(value) => {
-              console.log(value);
+            onChange={(event) => {
+              handleInput(event);
             }}
           />
           <Password
@@ -77,8 +70,8 @@ function Inputs() {
             name="password"
             id="password"
             placeholder="Enter your password"
-            onChange={(value) => {
-              console.log(value);
+            onChange={(event) => {
+              handleInput(event);
             }}
           />
           <InputField
@@ -88,8 +81,8 @@ function Inputs() {
             name="number"
             id="email"
             placeholder="Enter a number"
-            onChange={(value) => {
-              console.log(value);
+            onChange={(event) => {
+              handleInput(event);
             }}
           />
           <InputField
@@ -99,8 +92,8 @@ function Inputs() {
             name="url"
             id="url"
             placeholder="www.example.com"
-            onChange={(value) => {
-              console.log(value);
+            onChange={(event) => {
+              handleInput(event);
             }}
           />
           <InputField
@@ -110,8 +103,8 @@ function Inputs() {
             name="tel"
             id="tel"
             placeholder="+31620370451"
-            onChange={(value) => {
-              console.log(value);
+            onChange={(event) => {
+              handleInput(event);
             }}
           />
           <Select
@@ -124,8 +117,8 @@ function Inputs() {
               { value: "United States", label: "United States" },
               { value: "Mexico", label: "Mexico" },
             ]}
-            onChange={(value) => {
-              console.log(value);
+            onChange={(event) => {
+              console.log(event);
             }}
           />
           <Radio
@@ -145,22 +138,22 @@ function Inputs() {
                 value: "Push Notification",
               },
             ]}
-            onChange={(value) => {
-              console.log(value);
+            onChange={(event) => {
+              handleInput(event);
             }}
           />
           <TextArea
             label="Textarea"
             name="textarea"
             id="textarea"
-            onChange={(value) => {
-              console.log(value);
+            onChange={(event) => {
+              handleInput(event);
             }}
           />
           <Toggle
             label="Toggle"
-            onChange={(value) => {
-              console.log(value);
+            onChange={(event) => {
+              handleInput(event);
             }}
           />
           <Checkbox
@@ -179,8 +172,8 @@ function Inputs() {
                 value: "Push Notification",
               },
             ]}
-            onChange={(value) => {
-              console.log(value);
+            onChange={(event) => {
+              handleInput(event);
             }}
           />
         </Container>

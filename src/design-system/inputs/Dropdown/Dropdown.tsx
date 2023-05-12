@@ -11,14 +11,14 @@ import {
 import { useClickOutside } from "hooks/useClickOutside";
 
 // Type checking for the Dropdown
-export interface DropdownTypes {
+export interface DropdownProps {
   search: boolean;
   options: { label: string; value: string }[];
-  onChange: (value: string) => void;
+  onChange: (item: { label: string; value: string }) => void;
 }
 
 // Component
-export const Dropdown = ({ search, options, onChange }: DropdownTypes) => {
+export const Dropdown = ({ search, options, onChange }: DropdownProps) => {
   const { t } = useTranslation();
   const [label, setLabel] = useState(options[0].label);
   const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +37,7 @@ export const Dropdown = ({ search, options, onChange }: DropdownTypes) => {
 
   const DropdownHandler = (item: { label: string; value: string }) => {
     setLabel(item.label);
-    onChange(item.value);
+    onChange(item);
     setIsOpen(false);
     setSearchValue("");
   };
@@ -88,7 +88,6 @@ export const Dropdown = ({ search, options, onChange }: DropdownTypes) => {
                 </div>
               </div>
             )}
-
             {filteredDropdown.map((item) => (
               <button
                 type="button"

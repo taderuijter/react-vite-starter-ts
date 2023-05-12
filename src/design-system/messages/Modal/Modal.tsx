@@ -3,14 +3,14 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Button } from "design-system/actions/Button/Button";
 
 // Modal types
-interface ModalTypes {
+interface ModalProps {
   icon: React.ReactNode;
   title: string;
   content: string;
   button: React.ReactNode;
 }
 
-export const Modal = ({ icon, title, content, button }: ModalTypes) => {
+export const Modal = ({ icon, title, content, button }: ModalProps) => {
   const [open, setOpen] = useState(true);
 
   return (

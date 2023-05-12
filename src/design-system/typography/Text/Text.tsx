@@ -1,7 +1,5 @@
-import { ReactNode } from "react";
-
-export interface TextTypes {
-  children: ReactNode;
+export interface TextProps {
+  children: React.ReactNode;
 }
 
-export const Text = ({ children }: TextTypes) => <div>{children}</div>;
+export const Text = ({ children }: TextProps) => <div>{children}</div>;

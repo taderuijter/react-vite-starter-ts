@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Switch } from "@headlessui/react";
 
 // Input type
-export interface ToggleTypes {
+export interface ToggleProps {
   label: string;
   srOnly?: boolean;
   required?: boolean;
   onChange: (value: boolean) => void;
 }
 
-export const Toggle = ({ label, srOnly, required, onChange }: ToggleTypes) => {
+export const Toggle = ({ label, srOnly, required, onChange }: ToggleProps) => {
   const [enabled, setEnabled] = useState(false);
 
   const inputHandler = (value: boolean) => {

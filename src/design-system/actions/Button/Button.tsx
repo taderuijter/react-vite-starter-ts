@@ -1,12 +1,12 @@
 // Set types for props
-export interface ButtonTypes {
+export interface ButtonProps {
   type: "button" | "submit" | "reset";
   styling: "solid" | "outline" | "transparent";
   text: string;
   onClick: () => void;
 }
 
-export const Button = ({ type, styling, text, onClick }: ButtonTypes) => {
+export const Button = ({ type, styling, text, onClick }: ButtonProps) => {
   // Render button styling
   const renderButtonLayout = () => {
     switch (styling) {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // Input type
-export interface SelectTypes {
+export interface SelectProps {
   label: string;
   srOnly?: boolean;
   required?: boolean;
@@ -10,7 +10,7 @@ export interface SelectTypes {
   defaultValue: string;
   disabled?: boolean;
   options: { label: string; value: string }[];
-  onChange: (value: string) => void;
+  onChange: React.ChangeEventHandler<HTMLSelectElement>;
 }
 
 export const Select = ({
@@ -23,12 +23,12 @@ export const Select = ({
   disabled,
   options,
   onChange,
-}: SelectTypes) => {
+}: SelectProps) => {
   const [value, setValue] = useState(defaultValue);
 
-  const inputHandler = (value: string) => {
-    setValue(value);
-    onChange(value);
+  const inputHandler: React.ChangeEventHandler<HTMLSelectElement> = (event) => {
+    setValue(event.target.value);
+    onChange(event);
   };
 
   return (
@@ -47,7 +47,7 @@ export const Select = ({
           name={name}
           className="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-primary sm:text-sm sm:leading-6"
           defaultValue={value}
-          onChange={(e) => inputHandler(e.target.value)}
+          onChange={inputHandler}
           disabled={disabled}>
           {options.map((item) => (
             <option key={item.value} value={item.value}>

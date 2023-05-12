@@ -1,4 +1,4 @@
-export interface BadgeTypes {
+export interface BadgeProps {
   type:
     | "gray"
     | "red"
@@ -58,7 +58,7 @@ const sizeStyles = {
   },
 };
 
-export const Badge = ({ type, size, text }: BadgeTypes) => (
+export const Badge = ({ type, size, text }: BadgeProps) => (
   <span
     className={`inline-flex items-center rounded-full font-medium ${colorStyles[type].bg} ${colorStyles[type].text} ${sizeStyles[size].text} ${sizeStyles[size].padding}`}>
     {text}
