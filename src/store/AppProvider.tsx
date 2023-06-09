@@ -1,5 +1,4 @@
 import React from "react";
-import { CounterProvider } from "store/CounterContext";
 import { GlobalProvider } from "store/GlobalContext";
 import { LanguageProvider } from "store/LanguageContext";
 
@@ -8,11 +7,9 @@ type AppProviderProps = {
 };
 
 const AppProvider: React.FC<AppProviderProps> = ({ children }) => (
-  <CounterProvider>
-    <GlobalProvider>
-      <LanguageProvider>{children}</LanguageProvider>
-    </GlobalProvider>
-  </CounterProvider>
+  <GlobalProvider>
+    <LanguageProvider>{children}</LanguageProvider>
+  </GlobalProvider>
 );
 
 export default AppProvider;

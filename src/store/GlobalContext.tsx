@@ -4,6 +4,8 @@ import React, { createContext, Dispatch, useReducer } from "react";
 type GlobalState = {
   banner: boolean;
   cookies: boolean;
+  brandName: string;
+  brandImage: string;
 };
 
 type GlobalProviderProps = {
@@ -23,6 +25,8 @@ export const GlobalContext = createContext<{
   state: {
     banner: true,
     cookies: true,
+    brandName: "React Boilerplate",
+    brandImage: "",
   },
   dispatch: () => {
     throw new Error(
@@ -48,6 +52,8 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
   const initialState: GlobalState = {
     banner: true,
     cookies: true,
+    brandName: "React Boilerplate",
+    brandImage: "",
   };
 
   const [state, dispatch] = useReducer(globalReducer, initialState);
