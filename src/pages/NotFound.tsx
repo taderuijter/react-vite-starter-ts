@@ -2,7 +2,7 @@
 import { Helmet } from "react-helmet";
 
 // Import components
-import { Layout } from "design-system/layout/Layout/Layout";
+import { Dashboard } from "design-system/layout/Dashboard/Dashboard";
 
 function NotFound() {
   return (
@@ -12,9 +12,9 @@ function NotFound() {
         <title>404: Not Found</title>
       </Helmet>
 
-      <Layout>
+      <Dashboard>
         <h1 className="text-3xl font-bold underline">404 Not Found</h1>
-      </Layout>
+      </Dashboard>
     </>
   );
 }
