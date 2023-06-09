@@ -1,14 +1,22 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import * as path from 'path';
+import { defineConfig } from "vitest/config";
+import react from "@vitejs/plugin-react-swc";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }]
+  plugins: [react(), tsconfigPaths()],
+  test: {
+    globals: true,
+    environment: "jsdom",
   },
-  build: {
-    outDir: './build'
-  }
+  server: {
+    host: true,
+    port: 3000,
+  },
+  define: {
+    "process.env": {
+      // Define your environment variables here
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    },
+  },
 });

@@ -1,31 +1,28 @@
 // Library imports
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ReactDOM from "react-dom/client";
+import TagManager from "react-gtm-module";
 
 // Global styles
-import '@/style.css';
+import "assets/styles/index.css";
 
-// Router Views
-import Home from '@/views/Home';
-import About from '@/views/About';
-import NotFound from '@/views/NotFound';
+// import i18n (needs to be bundled ;))
+import "plugins/i18n";
 
-// React Router
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />
-  },
-  {
-    path: '/about',
-    element: <About />
-  },
-  {
-    path: '*',
-    element: <NotFound />
-  }
-]);
+// Store
+import AppProvider from "store/AppProvider";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <RouterProvider router={router} />
+// Google tag manager
+const tagManagerArgs = {
+  gtmId: "GTM-N829CWR",
+};
+
+// import component
+import App from "App";
+
+TagManager.initialize(tagManagerArgs);
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <AppProvider>
+    <App />
+  </AppProvider>,
 );

@@ -1,0 +1,42 @@
+{
+  "components": {
+    "navbar": {
+      "links": {
+        "home": "Home",
+        "inputs": "Inputs",
+        "users": "Users"
+      }
+    },
+    "dropdown": {
+      "search": { "placeholder": "Search" }
+    },
+    "cookies": {
+      "message": "Our website uses cookies to improve your browsing experience and to personalize the content and advertisements we show you. By using our website, you consent to our use of cookies. You can manage your cookie preferences at any time through your browser settings.",
+      "accept": "Accept all",
+      "reject": "Reject all",
+      "page": "Cookie policy"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Welcome to the React Boilerplate",
+      "content": "Our React boilerplate, built with Vite and TypeScript, is the perfect starting point for your next project. With e2e and unit testing already set up, you can get started building robust and error-free applications right away. Highly customizable and easy to use, our boilerplate is the ideal choice for developers of all skill levels."
+    },
+    "inputs": {
+      "title": "Inputs",
+      "content": "These components allow users to interact with the website or application by providing input data or making selections. Examples include forms, text boxes, buttons, drop-down menus, checkboxes, radio buttons, and sliders. The presence of input components indicates that the page is designed to be interactive and responsive to user input."
+    },
+    "users": {
+      "title": "Users",
+      "content": "This table presents a concise summary of user information, including key details such as username, full name, email address, registration date, and last login time. Use it to quickly gain insights into individual user activity and engagement within the platform."
+    }
+  },
+  "queries": {
+    "users": {
+      "name": "Name",
+      "gender": "Gender",
+      "birthday": "Birthday",
+      "skin": "Skin color"
+    }
+  }
+}
