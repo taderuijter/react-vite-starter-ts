@@ -1,8 +1,4 @@
-import { useState } from "react";
-
 function Icon() {
-  const [count, setCount] = useState(6);
-
   return (
     <div className="relative">
       <button
@@ -22,7 +18,7 @@ function Icon() {
         </svg>
       </button>
       <span className="inline-flex items-center px-1.5 absolute -top-px -right-1 py-0.5 rounded-full text-xs font-semibold bg-indigo-600 text-white">
-        {count}
+        6
       </span>
     </div>
   );
