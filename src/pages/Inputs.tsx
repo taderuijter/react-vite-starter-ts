@@ -23,6 +23,15 @@ function Inputs() {
     console.log(`Name: ${name}, Value: ${value}`);
   };
 
+  const handleTextArea = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const { value, name } = event.target;
+    console.log(`Name: ${name}, Value: ${value}`);
+  };
+
+  const handleCheckbox = (event: boolean) => {
+    console.log(event);
+  };
+
   return (
     <>
       <Helmet>
@@ -147,13 +156,13 @@ function Inputs() {
             name="textarea"
             id="textarea"
             onChange={(event) => {
-              handleInput(event);
+              handleTextArea(event);
             }}
           />
           <Toggle
             label="Toggle"
             onChange={(event) => {
-              handleInput(event);
+              handleCheckbox(event);
             }}
           />
           <Checkbox

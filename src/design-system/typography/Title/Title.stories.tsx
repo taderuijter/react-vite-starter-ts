@@ -13,37 +13,37 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
-export const h1: Story = {
+export const H1: Story = {
   args: {
     type: "h1",
     text: "Heading 1",
   },
 };
-export const h2: Story = {
+export const H2: Story = {
   args: {
     type: "h2",
     text: "Heading 2",
   },
 };
-export const h3: Story = {
+export const H3: Story = {
   args: {
     type: "h3",
     text: "Heading 3",
   },
 };
-export const h4: Story = {
+export const H4: Story = {
   args: {
     type: "h4",
     text: "Heading 4",
   },
 };
-export const h5: Story = {
+export const H5: Story = {
   args: {
     type: "h5",
     text: "Heading 5",
   },
 };
-export const h6: Story = {
+export const H6: Story = {
   args: {
     type: "h6",
     text: "Heading 6",

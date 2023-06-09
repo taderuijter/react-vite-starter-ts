@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useQuery } from "@tanstack/react-query";
 import { useFetch } from "hooks/useFetch";
 import { useTranslation } from "react-i18next";
