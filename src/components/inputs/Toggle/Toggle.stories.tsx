@@ -16,7 +16,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     label: "Toggle input",
-    srOnly: false,
     required: false,
     onChange: (value) => {
       console.log(value);
