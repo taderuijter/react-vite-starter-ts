@@ -13,7 +13,7 @@ export const DefaultHero = ({
   children,
 }: DefaultHeroProps) => (
   <div className={`relative ${bg}`}>
-    <section className="relative py-6 sm:py-16 lg:pt-20 lg:pb-36">
+    <section className="relative py-6 sm:py-16 lg:pt-18 lg:pb-24">
       <Container style="flex-row lg:flex items-center space-y-8 lg:space-y-0 lg:space-x-8">
         <div className="w-full lg:w-1/2 space-y-4 md:space-y-8">{children}</div>
         <div className="w-full lg:w-1/2">{image}</div>
