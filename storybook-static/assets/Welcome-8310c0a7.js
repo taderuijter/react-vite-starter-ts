@@ -1,0 +1,11 @@
+import{j as e}from"./jsx-runtime-daf202a7.js";import{u as s}from"./index-3efccfcc.js";import{M as i}from"./index-5a80fc59.js";import"./index-ec8b93d8.js";import"./_commonjsHelpers-042e6b4d.js";import"./iframe-cbd8d2c7.js";import"../sb-preview/runtime.js";import"./index-d475d2ea.js";import"./_commonjs-dynamic-modules-302442b1.js";import"./index-73c5a86f.js";import"./assert-a1982797.js";import"./index-d37d4223.js";import"./getPrototypeOf-a3ec403f.js";import"./index-356e4a49.js";const{deprecate:r}=__STORYBOOK_MODULE_CLIENT_LOGGER__;r("Import from '@storybook/addon-docs/blocks' is deprecated. Please import from '@storybook/blocks' instead.");function n(o){const t=Object.assign({h1:"h1",p:"p",h2:"h2"},s(),o.components);return e.jsxs(e.Fragment,{children:[e.jsx(i,{title:"Introduction/Welcome"}),`
+`,e.jsx(t.h1,{id:"welcome-to-our-design-system-",children:"Welcome to Our Design System 🎉"}),`
+`,e.jsx(t.p,{children:"Welcome to our design system, built to streamline the process of creating consistent and high-quality user interfaces. We hope this design system will serve as a single source of truth for your UI components and help your team create exceptional user experiences."}),`
+`,e.jsx(t.h2,{id:"getting-started",children:"Getting Started"}),`
+`,e.jsx(t.p,{children:"To get started, explore the components listed in the sidebar. You'll find detailed documentation, code snippets, and usage guidelines for each component. Additionally, you can interact with the components and see how they behave in different scenarios."}),`
+`,e.jsx(t.h2,{id:"collaboration",children:"Collaboration"}),`
+`,e.jsx(t.p,{children:"We encourage collaboration and contributions from all team members. If you have any ideas, suggestions, or improvements, feel free to submit a pull request or discuss them with the team."}),`
+`,e.jsx(t.h2,{id:"need-help",children:"Need Help?"}),`
+`,e.jsx(t.p,{children:"If you have any questions or need assistance, please reach out to the design system team. We're here to help you make the most of the design system and ensure your project's success."}),`
+`,e.jsx(t.p,{children:"Happy designing and coding! 🚀"})]})}function O(o={}){const{wrapper:t}=Object.assign({},s(),o.components);return t?e.jsx(t,Object.assign({},o,{children:e.jsx(n,o)})):n(o)}export{O as default};
+//# sourceMappingURL=Welcome-8310c0a7.js.map

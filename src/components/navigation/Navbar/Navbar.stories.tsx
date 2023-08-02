@@ -21,19 +21,12 @@ export const Default: Story = {
     brand: (
       <span className="text-xl font-bold text-gray-900">React Boilerplate</span>
     ),
-    navLinks: (
-      <>
-        <Link className="text-sm hover:text-slate-600" to="/">
-          Home
-        </Link>
-        <Link className="text-sm hover:text-slate-600" to="/inputs">
-          Inputs
-        </Link>
-        <Link className="text-sm hover:text-slate-600" to="/users">
-          Users
-        </Link>
-      </>
-    ),
+    Link,
+    pages: [
+      { name: "Home", href: "/" },
+      { name: "Blog", href: "/blog" },
+      { name: "About", href: "/about" },
+    ],
     style: "py-4 bg-slate-100",
   },
 };

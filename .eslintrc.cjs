@@ -36,7 +36,7 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "prettier/prettier": "error",
     "react-hooks/exhaustive-deps": "error",
-    "react/no-array-index-key": "error",
+    "react/no-array-index-key": "off",
     "react/prop-types": "off",
     "react/require-default-props": "off",
     "react/button-has-type": "error",

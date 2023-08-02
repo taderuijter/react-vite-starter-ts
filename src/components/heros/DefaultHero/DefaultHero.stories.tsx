@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     bg: "bg-gradient-to-t from-slate-200 to-slate-100",
-    children: (
+    content: (
       <>
         <h1>This is my default hero header.</h1>
         <p className="text-md">

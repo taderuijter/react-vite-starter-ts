@@ -1,0 +1,2 @@
+import{r as e}from"./index-ec8b93d8.js";function a({title:r,titleId:o,...t},n){return e.createElement("svg",Object.assign({xmlns:"http://www.w3.org/2000/svg",fill:"none",viewBox:"0 0 24 24",strokeWidth:1.5,stroke:"currentColor","aria-hidden":"true",ref:n,"aria-labelledby":o},t),r?e.createElement("title",{id:o},r):null,e.createElement("path",{strokeLinecap:"round",strokeLinejoin:"round",d:"M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"}))}const c=e.forwardRef(a),s=c;export{s as C};
+//# sourceMappingURL=CheckCircleIcon-d5cdaf5e.js.map

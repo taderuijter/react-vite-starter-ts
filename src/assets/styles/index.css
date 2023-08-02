@@ -9,30 +9,59 @@
   }
 
   h1 {
-    @apply text-5xl font-bold sm:text-6xl xl:text-7xl;
+    @apply text-5xl font-bold;
   }
 
   h2 {
-    @apply text-4xl font-bold sm:text-5xl;
+    @apply text-4xl font-bold;
   }
 
   h3 {
-    @apply text-3xl font-bold sm:text-4xl;
+    @apply text-3xl font-bold;
   }
 
   h4 {
-    @apply text-2xl font-bold sm:text-3xl;
+    @apply text-2xl font-bold;
   }
 
   h5 {
-    @apply text-xl font-bold sm:text-2xl;
+    @apply text-xl font-bold;
   }
 
   h6 {
-    @apply text-lg font-bold sm:text-xl;
+    @apply text-lg font-bold;
   }
 
   p {
-    @apply sm:text-xl leading-7 sm:leading-9;
+    @apply text-lg leading-9;
   }
+
+  ul {
+    @apply list-disc list-inside;
+  }
+
+  ol {
+    @apply list-decimal list-inside;
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  table {
+    @apply w-full text-left table-auto;
+  }
+
+  th {
+    @apply py-3.5 px-4 text-left text-xs font-bold text-black uppercase tracking-widest border-b-2 border-slate-200;
+  }
+
+  td {
+    @apply py-4 px-4 whitespace-nowrap text-sm text-black;
+  }
+}
+
+/* Regular CSS for every second td */
+tr:nth-child(even) {
+  background-color: #F2F5F9;
 }
